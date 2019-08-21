@@ -4,14 +4,16 @@
 #
 Name     : mvn-airbase
 Version  : 78
-Release  : 4
+Release  : 5
 URL      : https://github.com/airlift/airbase/archive/78.tar.gz
 Source0  : https://github.com/airlift/airbase/archive/78.tar.gz
-Source1  : https://repo1.maven.org/maven2/io/airlift/airbase/78/airbase-78.pom
+Source1  : https://repo1.maven.org/maven2/io/airlift/airbase/28/airbase-28.pom
+Source2  : https://repo1.maven.org/maven2/io/airlift/airbase/78/airbase-78.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: mvn-airbase-data = %{version}-%{release}
+Requires: mvn-airbase-license = %{version}-%{release}
 
 %description
 # Airbase
@@ -26,13 +28,27 @@ Group: Data
 data components for the mvn-airbase package.
 
 
+%package license
+Summary: license components for the mvn-airbase package.
+Group: Default
+
+%description license
+license components for the mvn-airbase package.
+
+
 %prep
+%setup -q -n airbase-78
 
 %build
 
 %install
+mkdir -p %{buildroot}/usr/share/package-licenses/mvn-airbase
+cp LICENSE.txt %{buildroot}/usr/share/package-licenses/mvn-airbase/LICENSE.txt
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/28
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/28/airbase-28.pom
+
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/78
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/78
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/78/airbase-78.pom
 
 
 %files
@@ -40,4 +56,9 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/78
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/io/airlift/airbase/28/airbase-28.pom
 /usr/share/java/.m2/repository/io/airlift/airbase/78/airbase-78.pom
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/mvn-airbase/LICENSE.txt
