@@ -4,7 +4,7 @@
 #
 Name     : mvn-airbase
 Version  : 78
-Release  : 6
+Release  : 7
 URL      : https://github.com/airlift/airbase/archive/78.tar.gz
 Source0  : https://github.com/airlift/airbase/archive/78.tar.gz
 Source1  : https://repo1.maven.org/maven2/io/airlift/airbase/28/airbase-28.pom
