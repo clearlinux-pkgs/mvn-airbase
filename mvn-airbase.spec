@@ -4,11 +4,16 @@
 #
 Name     : mvn-airbase
 Version  : 78
-Release  : 5
+Release  : 6
 URL      : https://github.com/airlift/airbase/archive/78.tar.gz
 Source0  : https://github.com/airlift/airbase/archive/78.tar.gz
 Source1  : https://repo1.maven.org/maven2/io/airlift/airbase/28/airbase-28.pom
-Source2  : https://repo1.maven.org/maven2/io/airlift/airbase/78/airbase-78.pom
+Source2  : https://repo1.maven.org/maven2/io/airlift/airbase/31/airbase-31.pom
+Source3  : https://repo1.maven.org/maven2/io/airlift/airbase/56/airbase-56.pom
+Source4  : https://repo1.maven.org/maven2/io/airlift/airbase/59/airbase-59.pom
+Source5  : https://repo1.maven.org/maven2/io/airlift/airbase/68/airbase-68.pom
+Source6  : https://repo1.maven.org/maven2/io/airlift/airbase/72/airbase-72.pom
+Source7  : https://repo1.maven.org/maven2/io/airlift/airbase/78/airbase-78.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -47,8 +52,23 @@ cp LICENSE.txt %{buildroot}/usr/share/package-licenses/mvn-airbase/LICENSE.txt
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/28
 cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/28/airbase-28.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/31
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/31/airbase-31.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/56
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/56/airbase-56.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/59
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/59/airbase-59.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/68
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/68/airbase-68.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/72
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/72/airbase-72.pom
+
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/78
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/78/airbase-78.pom
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/78/airbase-78.pom
 
 
 %files
@@ -57,6 +77,11 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/io/airlift/airbase/78/a
 %files data
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/io/airlift/airbase/28/airbase-28.pom
+/usr/share/java/.m2/repository/io/airlift/airbase/31/airbase-31.pom
+/usr/share/java/.m2/repository/io/airlift/airbase/56/airbase-56.pom
+/usr/share/java/.m2/repository/io/airlift/airbase/59/airbase-59.pom
+/usr/share/java/.m2/repository/io/airlift/airbase/68/airbase-68.pom
+/usr/share/java/.m2/repository/io/airlift/airbase/72/airbase-72.pom
 /usr/share/java/.m2/repository/io/airlift/airbase/78/airbase-78.pom
 
 %files license
